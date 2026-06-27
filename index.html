@@ -48,6 +48,16 @@
   .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 16px; }
   .section-intro { color: var(--muted); font-size: 1.05rem; max-width: 620px; margin-bottom: 48px; }
 
+  /* ---------- Stats band ---------- */
+  .stats { padding: 56px 0; background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+  .stat { text-align: center; padding: 14px 8px; border-radius: 14px; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+  .stat:hover { transform: translateY(-4px); background: var(--card); box-shadow: var(--shadow); }
+  .stat .num { font-family: "Sora", sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1; background: linear-gradient(120deg, var(--blue), var(--cyan)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat .lbl { margin-top: 10px; font-size: .82rem; color: var(--muted); font-weight: 600; line-height: 1.35; }
+  @media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
+  @media (max-width: 480px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
   /* ---------- Buttons ---------- */
   .btn {
     display: inline-flex; align-items: center; gap: 9px;
@@ -332,6 +342,20 @@
   </div>
 </section>
 
+<!-- ===== Stats ===== -->
+<section class="stats" aria-label="Key metrics">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="num">5+</div><div class="lbl">Years of enterprise Salesforce delivery</div></div>
+      <div class="stat"><div class="num">10×</div><div class="lbl">Salesforce certifications, incl. AI Specialist</div></div>
+      <div class="stat"><div class="num">1M+</div><div class="lbl">Records processed via optimized Batch Apex</div></div>
+      <div class="stat"><div class="num">15+</div><div class="lbl">Reusable LWC components shipped</div></div>
+      <div class="stat"><div class="num">~30%</div><div class="lbl">Faster builds from reusable components</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">PMD compliance across the codebase</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== About ===== -->
 <section id="about">
   <div class="wrap about-grid">
@@ -428,8 +452,8 @@
         <h3>Kotak LMS — Lead Management System</h3>
         <p class="proj-meta"><b>Role:</b> Technical Consultant &nbsp;·&nbsp; <b>Client:</b> Kotak Mahindra Bank</p>
         <p class="psi"><b>Problem</b> The bank needed leads and territory data synced in near real-time across multiple external systems — without hitting governor limits at scale.</p>
-        <p class="psi"><b>Solution</b> Architected Platform Event–based integrations for seamless sync and engineered optimized Batch Apex for high-volume processing. Built the Partner Portal UI in LWC and shipped end-to-end Deal Registration with Flows and Approval Processes.</p>
-        <p class="psi"><b>Impact</b> Faster, more reliable lead synchronization and streamlined deal workflows — delivered with rigorous PMD/Jest quality and full JIRA documentation for clean handoff.</p>
+        <p class="psi"><b>Solution</b> Architected Platform Event–based integrations delivering near real-time sync with &lt;2–5s latency, and engineered optimized Batch Apex processing 1M+ records (10,000+ per transaction) without governor-limit exceptions. Built 15+ reusable Partner Portal LWC components and shipped end-to-end Deal Registration with Flows and Approval Processes.</p>
+        <p class="psi"><b>Impact</b> Near real-time lead synchronization and streamlined deal workflows, with reusable components cutting future build time by ~30% — delivered at 100% PMD compliance with Jest tests and full JIRA documentation for clean handoff.</p>
         <div class="proj-stack">
           <span class="chip">Apex</span><span class="chip">LWC</span><span class="chip">Platform Events</span>
           <span class="chip">Batch Apex</span><span class="chip">Flows</span><span class="chip">Jest</span>
@@ -446,7 +470,7 @@
         <h3>Government Citizen Portals</h3>
         <p class="proj-meta"><b>Role:</b> Salesforce Consultant &nbsp;·&nbsp; <b>Client:</b> MTX Group (U.S. State Agencies)</p>
         <p class="psi"><b>Problem</b> Multiple state agencies needed secure, accessible, citizen-facing portals integrated with legacy payment and identity systems.</p>
-        <p class="psi"><b>Solution</b> Architected public and authenticated Experience Cloud portals, integrated VPS, NIC Payment Gateway, MavQ and JP Morgan Chase via REST/SOAP APIs, and resolved 508/WCAG accessibility compliance.</p>
+        <p class="psi"><b>Solution</b> Architected public and authenticated Experience Cloud portals, integrated VPS, NIC Payment Gateway, MavQ and JP Morgan Chase via REST/SOAP APIs, and resolved 250+ 508/WCAG accessibility issues in a single week.</p>
         <p class="psi"><b>Impact</b> Delivered production portals serving the public across programs like GA DECAL CAPS, Iowa ABD Licensing and WY DFS — with reusable components that accelerated future releases.</p>
         <div class="proj-stack">
           <span class="chip">Experience Cloud</span><span class="chip">LWC</span><span class="chip">Apex</span>
@@ -474,9 +498,9 @@
           <h3>Technical Consultant</h3>
           <p class="tl-role">Salesforce</p>
           <ul>
-            <li>Architected a Platform Event–driven Lead Management System for Kotak Mahindra Bank</li>
-            <li>Built Partner Portal UIs (LWC) and end-to-end Deal Registration with Flows &amp; Approval Processes</li>
-            <li>Enforced PMD compliance and Jest unit testing across the codebase</li>
+            <li>Architected a Platform Event–driven Lead Management System for Kotak Mahindra Bank with &lt;2–5s sync latency</li>
+            <li>Optimized Batch Apex to process 1M+ records and built 15+ reusable Partner Portal LWCs that cut build time ~30%</li>
+            <li>Enforced 100% PMD compliance and Jest unit testing across the codebase</li>
           </ul>
         </div>
       </div>
@@ -488,9 +512,9 @@
           <ul>
             <li>Delivered citizen-facing Experience Cloud portals for multiple U.S. government agencies</li>
             <li>Integrated VPS, NIC Payment Gateway, MavQ &amp; JP Morgan Chase via REST/SOAP APIs</li>
-            <li>Resolved 508/WCAG accessibility compliance and built reusable, configurable components</li>
+            <li>Resolved 250+ 508/WCAG accessibility issues in a single week and built reusable, configurable components</li>
           </ul>
-          <span class="tl-award">🏆 Team Excellence &amp; Above and Beyond Awards (2023)</span>
+          <span class="tl-award">🏆 Achiever of the Month (2025) · Team Excellence &amp; Above and Beyond Awards (2023)</span>
         </div>
       </div>
     </div>
